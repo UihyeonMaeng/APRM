@@ -2,14 +2,11 @@
 
 ## Anatomical Prior-Guided Routing for 3D Lung Tumor Segmentation
 
-**Uihyeon Maeng\*, Jonghun Kim\*, and Hyunjin Park†**  
+**Uihyeon Maeng\*, Jonghun Kim\*, and Hyunjin Park†**  (\* Equal contribution · † Corresponding author)
 Sungkyunkwan University  
 **ACCV 2026 · Oral presentation**  
-\* Equal contribution · † Corresponding author
 
 APRM (**Anatomical Prior-guided Routing Module**) adapts patch-level feature processing to anatomical context. It uses automatically extracted anatomical priors to select a region-specific router, which activates a small subset of shared expert adapters for each feature token.
-
-This repository provides the **default APRM implementation** and its complete preparation, training, and inference pipeline. The model class is named `APRM`. It builds on [nnU-Net](https://github.com/MIC-DKFZ/nnUNet).
 
 ## How does APRM work?
 
@@ -93,4 +90,4 @@ A paper link, DOI, and final proceedings metadata can be added here when availab
 
 ## Acknowledgements and license
 
-We thank the developers of nnU-Net, dynamic-network-architectures, and TotalSegmentator. The original nnU-Net attribution is retained in [NOTICE](NOTICE), and the included source license is [Apache 2.0](LICENSE).
+We thank the developers of [nnU-Net](https://github.com/MIC-DKFZ/nnUNet), dynamic-network-architectures, and TotalSegmentator. The original nnU-Net attribution is retained in [NOTICE](NOTICE), and the included source license is [Apache 2.0](LICENSE).
