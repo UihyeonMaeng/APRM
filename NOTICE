@@ -1,0 +1,19 @@
+APRM
+Anatomical Prior-Guided Routing for 3D Lung Tumor Segmentation
+Uihyeon Maeng, Jonghun Kim, and Hyunjin Park
+
+This repository contains a modified nnU-Net v2 pipeline from the source
+snapshot supplied with APRM (upstream package metadata: version 2.6.4).
+Upstream project: https://github.com/MIC-DKFZ/nnUNet
+
+Original nnU-Net copyright notices and the Apache License 2.0 are retained.
+Original authors include Fabian Isensee and the HIP Applied Computer Vision
+Lab / Division of Medical Image Computing, German Cancer Research Center
+(DKFZ), Heidelberg, Germany.
+
+Modified files use the aprm namespace, APRM command names, the fixed
+all-encoder anatomical routing model, and its anatomy-aware data paths.
+See documentation/implementation_notes.md for the release changes.
+
+TotalSegmentator and dynamic-network-architectures are separate third-party
+projects and are not vendored here. Their own licenses apply.

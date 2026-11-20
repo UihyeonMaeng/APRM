@@ -1,0 +1,78 @@
+[build-system]
+requires = ["setuptools>=67.8.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aprm"
+version = "0.1.0"
+description = "Anatomical Prior-Guided Routing for 3D Lung Tumor Segmentation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Uihyeon Maeng" },
+  { name = "Jonghun Kim" },
+  { name = "Hyunjin Park" },
+]
+keywords = ["APRM", "medical image segmentation", "anatomical priors", "mixture of experts"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: Apache Software License",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "torch>=2.1.2,!=2.9.*",
+  "acvl-utils>=0.2.3,<0.3",
+  "dynamic-network-architectures>=0.4.1,<0.5",
+  "batchgenerators>=0.25.1,<0.26",
+  "batchgeneratorsv2>=0.3.0,<0.4",
+  "numpy>=1.24",
+  "scipy",
+  "scikit-learn",
+  "scikit-image>=0.19.3",
+  "SimpleITK>=2.2.1",
+  "nibabel",
+  "pandas",
+  "tqdm",
+  "matplotlib",
+  "seaborn",
+  "tifffile",
+  "imagecodecs",
+  "graphviz",
+  "blosc2>=3.0.0,<5",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.9"]
+
+[project.scripts]
+APRM_plan_and_preprocess = "aprm.experiment_planning.plan_and_preprocess_entrypoints:plan_and_preprocess_entry"
+APRM_extract_fingerprint = "aprm.experiment_planning.plan_and_preprocess_entrypoints:extract_fingerprint_entry"
+APRM_plan_experiment = "aprm.experiment_planning.plan_and_preprocess_entrypoints:plan_experiment_entry"
+APRM_preprocess = "aprm.experiment_planning.plan_and_preprocess_entrypoints:preprocess_entry"
+APRM_prepare_anatomy = "aprm.anatomy.prepare_labelmaps:prepare_labelmaps_entry"
+APRM_prepare_routing = "aprm.anatomy.routing_preprocessing:prepare_routing_sidecars_entry"
+APRM_train = "aprm.run.run_training:run_training_entry"
+APRM_predict = "aprm.inference.predict_from_raw_data:predict_entry_point"
+APRM_predict_from_modelfolder = "aprm.inference.predict_from_raw_data:predict_entry_point_modelfolder"
+APRM_evaluate_folder = "aprm.evaluation.evaluate_predictions:evaluate_folder_entry_point"
+APRM_evaluate_simple = "aprm.evaluation.evaluate_predictions:evaluate_simple_entry_point"
+APRM_convert_MSD_dataset = "aprm.dataset_conversion.convert_MSD_dataset:entry_point"
+APRM_move_plans_between_datasets = "aprm.experiment_planning.plans_for_pretraining.move_plans_between_datasets:entry_point_move_plans_between_datasets"
+
+[tool.setuptools.packages.find]
+include = ["aprm*"]
+exclude = ["tests*", "documentation*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["F821", "F822", "F823", "E9"]
