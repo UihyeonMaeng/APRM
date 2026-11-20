@@ -81,12 +81,11 @@ This is an **all-encoder release**. It is not directly compatible with checkpoin
 ## Citation
 
 ```bibtex
-@inproceedings{maeng2026aprm,
-  title     = {Anatomical Prior-Guided Routing for 3D Lung Tumor Segmentation},
-  author    = {Maeng, Uihyeon and Kim, Jonghun and Park, Hyunjin},
-  booktitle = {Asian Conference on Computer Vision (ACCV)},
-  year      = {2026},
-  note      = {Oral presentation}
+@article{maeng2026anatomical,
+  title={Anatomical Prior-Guided Routing for 3D Lung Tumor Segmentation},
+  author={Maeng, Uihyeon and Kim, Jonghun and Park, Hyunjin},
+  journal={arXiv preprint arXiv:2610.39414},
+  year={2026}
 }
 ```
 
